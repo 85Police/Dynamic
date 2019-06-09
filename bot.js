@@ -4,6 +4,11 @@ const devs = ['']
 const prefix = '~';
 
 
+client.on('message', message => {
+if(message.content === 'hi')
+message.reply(`Hi`)
+});
+
 client.on(`ready`,ready => {
 console.log(`welcome ${client.user.username}`)
 });
