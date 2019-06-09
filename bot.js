@@ -16,7 +16,7 @@ console.log(`welcome ${client.user.username}`)
 client.on('message', message => {
 if(message.author.bot) return;
 if(message.channel.type === 'dm') return;
-if (!message.member.hasPermission("ADMINISTRATOR"))  return; message.reply('You dont have permissions')
+if (!message.member.hasPermission("ADMINISTRATOR"))  return; 
     if(message.content.startsWith(prefix + 'bc')) {
      let filter = m => m.author.id === message.author.id;
  
