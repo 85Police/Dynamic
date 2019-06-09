@@ -3,6 +3,11 @@ const client = new Discord.Client();
 const devs = ['~']
 const prefix = '-';
 
+
+client.on(`ready`,ready => {
+console.log(`welcome ${client.user.username}`)
+});
+
 client.on('message', message => {
 if(message.author.bot) return;
 if(message.channel.type === 'dm') return;
