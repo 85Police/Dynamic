@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const devs = ['~']
-const prefix = '-';
+const devs = ['']
+const prefix = '~';
 
 
 client.on(`ready`,ready => {
