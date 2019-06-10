@@ -24,8 +24,8 @@ client.on('message', message => {
   .addField(`🚩Sender🚩`,message.author.username)
   .addField(`📜Message📜`, args)
   var args = message.content.split(" ").slice(1).join(" ")
-  client.guild.members.forEach(e =>
-    e.send(args))
+  message.guild.members.forEach(e => 
+    e.send(embed))
     message.reply(`Done send message to ${guild.memberCount}`)
   });
     
