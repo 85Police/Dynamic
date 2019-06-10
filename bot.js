@@ -18,13 +18,10 @@ client.on('message', message => {
   if (!message.member.hasPermission("ADMINISTRATOR"))  return; 
   var args = message.content.split(" ").slice(1).join(" ")
   var embed = new Discord.RichEmbed()
-         .setColor('RANDOM')
-         .setTitle(`:mega: New Broadcast`)
-         .addField('🔰Server🔰', message.guild.name)
-         .addField('🚩Sender🚩', message.author.username)
-         .addField('📜Message📜', `${args}`)
-         .setThumbnail('https://a.top4top.net/p_1008gqyyd1.png')
-         .setFooter(client.user.username, client.user.avatarURL);
+.setColor(`RANDOM`)
+.setTitle(`New Broadcast`)
+.setThumbnail(`https://a.top4top.net/p_1008gqyyd1.png`)
+.addField(`Message`, args)
   message.guild.members.forEach(e => 
     e.send(embed))
     message.reply(`Done send message to all members`)
