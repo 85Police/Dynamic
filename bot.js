@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const devs = ['']
-const prefix = '~';
+const prefix = '-';
 
 
 client.on('message', message => {
@@ -13,19 +13,15 @@ client.on(`ready`,ready => {
 console.log(`welcome ${client.user.username}`)
 });
 
-client.on('message', message => {
-  if(message.content === `-bc`)
-  if (!message.member.hasPermission("ADMINISTRATOR"))  return; 
-  var args = message.content.split(" ").slice(1).join(" ")
-  var embed = new Discord.RichEmbed()
-.setColor(`RANDOM`)
-.setTitle(`New Broadcast`)
-.setThumbnail(`https://a.top4top.net/p_1008gqyyd1.png`)
-.addField(`Message`, args)
-  message.guild.members.forEach(e => 
-    e.send(embed))
-    message.reply(`Done send message to all members`)
+client.on('message', async message => {
+  if(message.content.startsWith(prefix + 'bc'))
+  var args = message.content.split(" ").slice(1)
+  if(message.member.hasPermission('ADMINISTRATOR')) return message.reply(`ليس لديك صلاحيات الادمن`)
+  if(!message.guild.member(client.user).hasPermission('ADMINISTRATOR')) return message.reply(`لا املك صلاحيات الادمن`) 
+  client.guild.member.forEach(e => {
+    e.send(args)
   });
+});
     
     
 client.login(process.env.BOT_TOKEN);
