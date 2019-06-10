@@ -20,7 +20,7 @@ client.on('message', message => {
   .setColor(`RED`)
   .setThumbnail(`https://a.top4top.net/p_1008gqyyd1.png`)
   .setFooter(client.user.username, client.user.avatarURL)
-  .addField(`🔰Server🔰`, message.guild.name)
+  .addField(`🔰Server🔰`, message.guild.username)
   .addField(`🚩Sender🚩`,message.author.username)
   .addField(`📜Message📜`, args)
   var args = message.content.split(" ").slice(1).join(" ")
