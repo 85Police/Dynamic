@@ -26,7 +26,7 @@ client.on('message', message => {
   var args = message.content.split(" ").slice(1).join(" ")
   message.guild.members.forEach(e => 
     e.send(embed))
-    message.reply(`Done send message to ${guild.memberCount}`)
+    message.reply(`Done send message to all members`)
   });
     
     
